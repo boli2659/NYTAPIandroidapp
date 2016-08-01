@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sorting_array">
+        <item>Oldest First</item>
+        <item>Newest First</item>
+    </string-array>
+    <string-array name="source_array">
+        <item>All</item>
+        <item>New York Times only</item>
+    </string-array>
+</resources>

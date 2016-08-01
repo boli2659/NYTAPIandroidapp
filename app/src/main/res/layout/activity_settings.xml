@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.codepath.nytimesapp.Activities.SettingsActivity">
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerSort"
+        android:entries="@array/sorting_array"
+        android:prompt="@string/planets_prompt"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categories:"
+        android:id="@+id/tvCategories"
+        android:layout_below="@+id/spinnerSort"
+        android:layout_centerHorizontal="true"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sports"
+        android:id="@+id/cbSports"
+        android:checked="false"
+        android:layout_alignTop="@+id/cbJobs"
+        android:layout_toRightOf="@+id/cbJobs"
+        android:layout_toEndOf="@+id/cbJobs"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fashion"
+        android:id="@+id/cbFashion"
+        android:checked="false"
+        android:layout_below="@+id/cbEducation"
+        android:layout_toRightOf="@+id/cbDining"
+        android:layout_toEndOf="@+id/cbDining"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerSource"
+        android:entries="@array/source_array"
+        android:layout_below="@+id/cbBusiness"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apply"
+        android:id="@+id/btnApply"
+        android:onClick="onApply"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Arts"
+        android:id="@+id/cbArts"
+        android:checked="false"
+        android:layout_below="@+id/tvCategories"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Business"
+        android:id="@+id/cbBusiness"
+        android:layout_alignBottom="@+id/cbFashion"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cars"
+        android:id="@+id/cbCars"
+        android:layout_below="@+id/tvCategories"
+        android:layout_toRightOf="@+id/cbArts"
+        android:layout_toEndOf="@+id/cbArts"
+        android:checked="false"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dining"
+        android:id="@+id/cbDining"
+        android:layout_alignBottom="@+id/cbBusiness"
+        android:layout_toRightOf="@+id/cbBusiness"
+        android:layout_toEndOf="@+id/cbBusiness"
+        android:checked="false"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Education"
+        android:id="@+id/cbEducation"
+        android:layout_alignTop="@+id/cbSports"
+        android:layout_toRightOf="@+id/cbCars"
+        android:layout_toEndOf="@+id/cbCars"
+        android:checked="false"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jobs"
+        android:id="@+id/cbJobs"
+        android:layout_below="@+id/tvCategories"
+        android:layout_toRightOf="@+id/cbEducation"
+        android:layout_toEndOf="@+id/cbEducation"
+        android:checked="false"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Technology"
+        android:id="@+id/cbTech"
+        android:layout_alignTop="@+id/cbFashion"
+        android:layout_toRightOf="@+id/cbFashion"
+        android:layout_toEndOf="@+id/cbFashion"
+        android:checked="false"/>
+</RelativeLayout>
