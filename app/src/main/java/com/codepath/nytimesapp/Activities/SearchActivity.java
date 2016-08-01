@@ -75,8 +75,7 @@ public class SearchActivity extends AppCompatActivity implements DatePickerDialo
             @Override
             public boolean onLoadMore(int page, int totalItemsCount) {
 
-                fetchArticles(q, page);
-                // or customLoadMoreDataFromApi(totalItemsCount);
+                fetchArticles(q, page, true);
                 return true; // ONLY if more data is actually being loaded; false otherwise.
             }
         });
@@ -199,21 +198,21 @@ public class SearchActivity extends AppCompatActivity implements DatePickerDialo
             public boolean onQueryTextSubmit(String query) {
                 q = query;
                 searchView.clearFocus();
-                fetchArticles(query, 0);
+                fetchArticles(query, 0, false);
                 return true;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
                 q = newText;
-                fetchArticles(newText, 0);
+                fetchArticles(newText, 0, false);
                 return false;
             }
         });
         return super.onCreateOptionsMenu(menu);
     }
 
-    private void fetchArticles(String query, int page) {
+    private void fetchArticles(String query, int page, final boolean loadMore) {
         AsyncHttpClient client = new AsyncHttpClient();
         String url = "http://api.nytimes.com/svc/search/v2/articlesearch.json";
 
@@ -249,7 +248,9 @@ public class SearchActivity extends AppCompatActivity implements DatePickerDialo
                 //super.onSuccess(statusCode, headers, response);
                 Log.d("DEBUG", response.toString());
                 JSONArray articleResults = null;
-
+                if(!loadMore) {
+                    articles.clear();
+                }
                 try {
                     articleResults = response.getJSONObject("response").getJSONArray("docs");
                     articles.addAll(Article.fromJSONArray(articleResults));
